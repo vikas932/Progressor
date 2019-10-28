@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="display-4 text-center">Member Workout Info</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      <app-member></app-member>
+    </div>
+    <div class="col-md-7">
+      <app-memberworkout-list></app-memberworkout-list>
+    </div>
+  </div>
+  <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/graph">Squat Progression</a>
+      </li>
+    </ul>
+    <div>
+        <router-outlet></router-outlet>
+</div>

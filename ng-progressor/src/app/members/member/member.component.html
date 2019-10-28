@@ -1,0 +1,29 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="MemberID" #FullName="ngModel" [(ngModel)]="service.formData.MemberID">
+  <div class="form-group">
+    <label>FULL NAME</label>
+    <input name="FullName" #FullName="ngModel" [(ngModel)]="service.formData.FullName" class="form-control" required>
+    <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>WORKOUT</label>
+    <input name="Workout" #Workout="ngModel" [(ngModel)]="service.formData.Workout" class="form-control" required>
+    <div class="validation-error" *ngIf="Workout.invalid && Workout.touched">This field is required.</div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>WORKOUT WEIGHT</label>
+      <input name="WorkoutWeight" #WorkoutWeight="ngModel" [(ngModel)]="service.formData.WorkoutWeight" class="form-control" required>
+      <div class="validation-error" *ngIf="WorkoutWeight.invalid && WorkoutWeight.touched">This field is required.</div>
+    </div> 
+    <div class="form-group col-md-6">
+        <label>WEIGHT-IN</label>
+        <select name="WeightType" #WeightType="ngModel" [(ngModel)]="weight.x" class="form-control" required>
+          <option *ngFor="let x of weight" [ngValue]="x">{{x}}</option >
+        </select>
+      </div>  
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<table class="table table-hover">
+  <tr *ngFor="let mem of service.list">
+    <td (click)="populateForm(mem)">[{{mem.MemberID}}]-{{mem.FullName}}</td>
+    <td (click)="populateForm(mem)">{{mem.Workout}}</td>
+    <td (click)="populateForm(mem)">{{mem.WorkoutWeight}}</td>
+    <td (click)="populateForm(mem)">{{mem.WeightType}}</td>
+    <td><button (click)="onDelete(mem.MemberID)" class="btn btn-sm btn-outline-danger">X</button></td>
+  </tr>
+</table>
